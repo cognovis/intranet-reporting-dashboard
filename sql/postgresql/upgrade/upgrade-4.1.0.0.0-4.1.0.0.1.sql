@@ -40,3 +40,10 @@ SELECT acs_permission__grant_permission(
         'read'
 );
 
+
+-- Disable the old component
+update im_component_plugins
+set enabled_p = 'f'
+where package_name = 'intranet-reporting-dashboard' and
+      plugin_name = 'Home All-Time Top Customers';
+
