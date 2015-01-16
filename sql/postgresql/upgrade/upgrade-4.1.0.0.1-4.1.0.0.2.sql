@@ -27,3 +27,9 @@ SELECT acs_permission__grant_permission(
         (select group_id from groups where group_name = 'Employees'),
         'read'
 );
+
+-- Delete the Home All-Time Top Services Portlet - does not work anymore
+select	im_component_plugin__delete(plugin_id)
+from	im_component_plugins
+where	plugin_name = 'Home All-Time Top Services';
+
